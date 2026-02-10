@@ -13,7 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Convetex",
+  title: "Convertex",
   description: "Where U can turn anything to anything",
 };
 
