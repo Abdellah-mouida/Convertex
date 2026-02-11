@@ -11,7 +11,7 @@ export const POST = async (request: NextRequest) => {
   const data = await request.formData();
   const file: File | null = data.get("file") as unknown as File;
   const to = data.get("to") as string;
-  const from = extname(file.name).replace(".", "");
+  const from = file.type;
   if (!file) {
     return NextResponse.json(
       { message: "NO File Found", success: false },
@@ -26,7 +26,7 @@ export const POST = async (request: NextRequest) => {
   }
 
   // upload the file to S3
-  const key = `${uuid()}.${from}`;
+  const key = `${uuid()}_${uuid()}`.replace("\-\g", "");
   const fileLocation = `uploads/${key}`;
   const bucket = process.env.SUPABASE_BUCKET as string;
 
@@ -48,9 +48,9 @@ export const POST = async (request: NextRequest) => {
     const conversion = await prisma.conversion.create({
       data: {
         fileLocation,
-        from,
-        to,
-        current: from,
+        fromMime: from,
+        toMime: to,
+        currentMime: from,
         status: Conversion_Status.PENDING,
       },
     });
@@ -58,6 +58,7 @@ export const POST = async (request: NextRequest) => {
     return NextResponse.json({
       message: "The File uploaded successfully",
       id: conversion.id,
+      fileLocation,
     });
   } catch (error) {
     return NextResponse.json(

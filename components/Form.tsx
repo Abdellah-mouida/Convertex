@@ -22,9 +22,10 @@ const Form = () => {
       data.set("to", to);
       const res = await fetch("/api/upload", { method: "POST", body: data });
       if (!res.ok) throw new Error(await res.text());
-      const { id } = await res.json();
+      const { id, fileLocation } = await res.json();
       setId(id);
       console.log("Id : " + id);
+      console.log(fileLocation);
     } catch (err) {
       console.log(err);
     }
@@ -55,7 +56,7 @@ const Form = () => {
         </div>
         <input type="submit" value="Upload" />
       </form>
-      <a href={"/api/download/" + id} download="file.png">
+      <a href={"/api/download/" + id} download={id.slice(4, 16)}>
         Download
       </a>
     </>

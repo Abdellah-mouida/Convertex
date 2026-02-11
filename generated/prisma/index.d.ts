@@ -3410,9 +3410,9 @@ export namespace Prisma {
     id: string | null
     createdAt: Date | null
     fileLocation: string | null
-    from: string | null
-    to: string | null
-    current: string | null
+    fromMime: string | null
+    toMime: string | null
+    currentMime: string | null
     status: $Enums.Conversion_Status | null
     error: string | null
     updatedAt: Date | null
@@ -3424,9 +3424,9 @@ export namespace Prisma {
     id: string | null
     createdAt: Date | null
     fileLocation: string | null
-    from: string | null
-    to: string | null
-    current: string | null
+    fromMime: string | null
+    toMime: string | null
+    currentMime: string | null
     status: $Enums.Conversion_Status | null
     error: string | null
     updatedAt: Date | null
@@ -3438,9 +3438,9 @@ export namespace Prisma {
     id: number
     createdAt: number
     fileLocation: number
-    from: number
-    to: number
-    current: number
+    fromMime: number
+    toMime: number
+    currentMime: number
     status: number
     error: number
     updatedAt: number
@@ -3454,9 +3454,9 @@ export namespace Prisma {
     id?: true
     createdAt?: true
     fileLocation?: true
-    from?: true
-    to?: true
-    current?: true
+    fromMime?: true
+    toMime?: true
+    currentMime?: true
     status?: true
     error?: true
     updatedAt?: true
@@ -3468,9 +3468,9 @@ export namespace Prisma {
     id?: true
     createdAt?: true
     fileLocation?: true
-    from?: true
-    to?: true
-    current?: true
+    fromMime?: true
+    toMime?: true
+    currentMime?: true
     status?: true
     error?: true
     updatedAt?: true
@@ -3482,9 +3482,9 @@ export namespace Prisma {
     id?: true
     createdAt?: true
     fileLocation?: true
-    from?: true
-    to?: true
-    current?: true
+    fromMime?: true
+    toMime?: true
+    currentMime?: true
     status?: true
     error?: true
     updatedAt?: true
@@ -3569,9 +3569,9 @@ export namespace Prisma {
     id: string
     createdAt: Date
     fileLocation: string
-    from: string
-    to: string
-    current: string
+    fromMime: string
+    toMime: string
+    currentMime: string
     status: $Enums.Conversion_Status
     error: string | null
     updatedAt: Date
@@ -3600,9 +3600,9 @@ export namespace Prisma {
     id?: boolean
     createdAt?: boolean
     fileLocation?: boolean
-    from?: boolean
-    to?: boolean
-    current?: boolean
+    fromMime?: boolean
+    toMime?: boolean
+    currentMime?: boolean
     status?: boolean
     error?: boolean
     updatedAt?: boolean
@@ -3616,9 +3616,9 @@ export namespace Prisma {
     id?: boolean
     createdAt?: boolean
     fileLocation?: boolean
-    from?: boolean
-    to?: boolean
-    current?: boolean
+    fromMime?: boolean
+    toMime?: boolean
+    currentMime?: boolean
     status?: boolean
     error?: boolean
     updatedAt?: boolean
@@ -3632,9 +3632,9 @@ export namespace Prisma {
     id?: boolean
     createdAt?: boolean
     fileLocation?: boolean
-    from?: boolean
-    to?: boolean
-    current?: boolean
+    fromMime?: boolean
+    toMime?: boolean
+    currentMime?: boolean
     status?: boolean
     error?: boolean
     updatedAt?: boolean
@@ -3648,9 +3648,9 @@ export namespace Prisma {
     id?: boolean
     createdAt?: boolean
     fileLocation?: boolean
-    from?: boolean
-    to?: boolean
-    current?: boolean
+    fromMime?: boolean
+    toMime?: boolean
+    currentMime?: boolean
     status?: boolean
     error?: boolean
     updatedAt?: boolean
@@ -3658,7 +3658,7 @@ export namespace Prisma {
     userId?: boolean
   }
 
-  export type ConversionOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "createdAt" | "fileLocation" | "from" | "to" | "current" | "status" | "error" | "updatedAt" | "tenantId" | "userId", ExtArgs["result"]["conversion"]>
+  export type ConversionOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "createdAt" | "fileLocation" | "fromMime" | "toMime" | "currentMime" | "status" | "error" | "updatedAt" | "tenantId" | "userId", ExtArgs["result"]["conversion"]>
   export type ConversionInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     tenant?: boolean | Conversion$tenantArgs<ExtArgs>
     user?: boolean | Conversion$userArgs<ExtArgs>
@@ -3682,9 +3682,9 @@ export namespace Prisma {
       id: string
       createdAt: Date
       fileLocation: string
-      from: string
-      to: string
-      current: string
+      fromMime: string
+      toMime: string
+      currentMime: string
       status: $Enums.Conversion_Status
       error: string | null
       updatedAt: Date
@@ -4118,9 +4118,9 @@ export namespace Prisma {
     readonly id: FieldRef<"Conversion", 'String'>
     readonly createdAt: FieldRef<"Conversion", 'DateTime'>
     readonly fileLocation: FieldRef<"Conversion", 'String'>
-    readonly from: FieldRef<"Conversion", 'String'>
-    readonly to: FieldRef<"Conversion", 'String'>
-    readonly current: FieldRef<"Conversion", 'String'>
+    readonly fromMime: FieldRef<"Conversion", 'String'>
+    readonly toMime: FieldRef<"Conversion", 'String'>
+    readonly currentMime: FieldRef<"Conversion", 'String'>
     readonly status: FieldRef<"Conversion", 'Conversion_Status'>
     readonly error: FieldRef<"Conversion", 'String'>
     readonly updatedAt: FieldRef<"Conversion", 'DateTime'>
@@ -4623,9 +4623,9 @@ export namespace Prisma {
     id: 'id',
     createdAt: 'createdAt',
     fileLocation: 'fileLocation',
-    from: 'from',
-    to: 'to',
-    current: 'current',
+    fromMime: 'fromMime',
+    toMime: 'toMime',
+    currentMime: 'currentMime',
     status: 'status',
     error: 'error',
     updatedAt: 'updatedAt',
@@ -4886,9 +4886,9 @@ export namespace Prisma {
     id?: StringFilter<"Conversion"> | string
     createdAt?: DateTimeFilter<"Conversion"> | Date | string
     fileLocation?: StringFilter<"Conversion"> | string
-    from?: StringFilter<"Conversion"> | string
-    to?: StringFilter<"Conversion"> | string
-    current?: StringFilter<"Conversion"> | string
+    fromMime?: StringFilter<"Conversion"> | string
+    toMime?: StringFilter<"Conversion"> | string
+    currentMime?: StringFilter<"Conversion"> | string
     status?: EnumConversion_StatusFilter<"Conversion"> | $Enums.Conversion_Status
     error?: StringNullableFilter<"Conversion"> | string | null
     updatedAt?: DateTimeFilter<"Conversion"> | Date | string
@@ -4902,9 +4902,9 @@ export namespace Prisma {
     id?: SortOrder
     createdAt?: SortOrder
     fileLocation?: SortOrder
-    from?: SortOrder
-    to?: SortOrder
-    current?: SortOrder
+    fromMime?: SortOrder
+    toMime?: SortOrder
+    currentMime?: SortOrder
     status?: SortOrder
     error?: SortOrderInput | SortOrder
     updatedAt?: SortOrder
@@ -4921,9 +4921,9 @@ export namespace Prisma {
     NOT?: ConversionWhereInput | ConversionWhereInput[]
     createdAt?: DateTimeFilter<"Conversion"> | Date | string
     fileLocation?: StringFilter<"Conversion"> | string
-    from?: StringFilter<"Conversion"> | string
-    to?: StringFilter<"Conversion"> | string
-    current?: StringFilter<"Conversion"> | string
+    fromMime?: StringFilter<"Conversion"> | string
+    toMime?: StringFilter<"Conversion"> | string
+    currentMime?: StringFilter<"Conversion"> | string
     status?: EnumConversion_StatusFilter<"Conversion"> | $Enums.Conversion_Status
     error?: StringNullableFilter<"Conversion"> | string | null
     updatedAt?: DateTimeFilter<"Conversion"> | Date | string
@@ -4937,9 +4937,9 @@ export namespace Prisma {
     id?: SortOrder
     createdAt?: SortOrder
     fileLocation?: SortOrder
-    from?: SortOrder
-    to?: SortOrder
-    current?: SortOrder
+    fromMime?: SortOrder
+    toMime?: SortOrder
+    currentMime?: SortOrder
     status?: SortOrder
     error?: SortOrderInput | SortOrder
     updatedAt?: SortOrder
@@ -4957,9 +4957,9 @@ export namespace Prisma {
     id?: StringWithAggregatesFilter<"Conversion"> | string
     createdAt?: DateTimeWithAggregatesFilter<"Conversion"> | Date | string
     fileLocation?: StringWithAggregatesFilter<"Conversion"> | string
-    from?: StringWithAggregatesFilter<"Conversion"> | string
-    to?: StringWithAggregatesFilter<"Conversion"> | string
-    current?: StringWithAggregatesFilter<"Conversion"> | string
+    fromMime?: StringWithAggregatesFilter<"Conversion"> | string
+    toMime?: StringWithAggregatesFilter<"Conversion"> | string
+    currentMime?: StringWithAggregatesFilter<"Conversion"> | string
     status?: EnumConversion_StatusWithAggregatesFilter<"Conversion"> | $Enums.Conversion_Status
     error?: StringNullableWithAggregatesFilter<"Conversion"> | string | null
     updatedAt?: DateTimeWithAggregatesFilter<"Conversion"> | Date | string
@@ -5129,9 +5129,9 @@ export namespace Prisma {
     id?: string
     createdAt?: Date | string
     fileLocation: string
-    from: string
-    to: string
-    current: string
+    fromMime: string
+    toMime: string
+    currentMime: string
     status: $Enums.Conversion_Status
     error?: string | null
     updatedAt?: Date | string
@@ -5143,9 +5143,9 @@ export namespace Prisma {
     id?: string
     createdAt?: Date | string
     fileLocation: string
-    from: string
-    to: string
-    current: string
+    fromMime: string
+    toMime: string
+    currentMime: string
     status: $Enums.Conversion_Status
     error?: string | null
     updatedAt?: Date | string
@@ -5157,9 +5157,9 @@ export namespace Prisma {
     id?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     fileLocation?: StringFieldUpdateOperationsInput | string
-    from?: StringFieldUpdateOperationsInput | string
-    to?: StringFieldUpdateOperationsInput | string
-    current?: StringFieldUpdateOperationsInput | string
+    fromMime?: StringFieldUpdateOperationsInput | string
+    toMime?: StringFieldUpdateOperationsInput | string
+    currentMime?: StringFieldUpdateOperationsInput | string
     status?: EnumConversion_StatusFieldUpdateOperationsInput | $Enums.Conversion_Status
     error?: NullableStringFieldUpdateOperationsInput | string | null
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -5171,9 +5171,9 @@ export namespace Prisma {
     id?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     fileLocation?: StringFieldUpdateOperationsInput | string
-    from?: StringFieldUpdateOperationsInput | string
-    to?: StringFieldUpdateOperationsInput | string
-    current?: StringFieldUpdateOperationsInput | string
+    fromMime?: StringFieldUpdateOperationsInput | string
+    toMime?: StringFieldUpdateOperationsInput | string
+    currentMime?: StringFieldUpdateOperationsInput | string
     status?: EnumConversion_StatusFieldUpdateOperationsInput | $Enums.Conversion_Status
     error?: NullableStringFieldUpdateOperationsInput | string | null
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -5185,9 +5185,9 @@ export namespace Prisma {
     id?: string
     createdAt?: Date | string
     fileLocation: string
-    from: string
-    to: string
-    current: string
+    fromMime: string
+    toMime: string
+    currentMime: string
     status: $Enums.Conversion_Status
     error?: string | null
     updatedAt?: Date | string
@@ -5199,9 +5199,9 @@ export namespace Prisma {
     id?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     fileLocation?: StringFieldUpdateOperationsInput | string
-    from?: StringFieldUpdateOperationsInput | string
-    to?: StringFieldUpdateOperationsInput | string
-    current?: StringFieldUpdateOperationsInput | string
+    fromMime?: StringFieldUpdateOperationsInput | string
+    toMime?: StringFieldUpdateOperationsInput | string
+    currentMime?: StringFieldUpdateOperationsInput | string
     status?: EnumConversion_StatusFieldUpdateOperationsInput | $Enums.Conversion_Status
     error?: NullableStringFieldUpdateOperationsInput | string | null
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -5211,9 +5211,9 @@ export namespace Prisma {
     id?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     fileLocation?: StringFieldUpdateOperationsInput | string
-    from?: StringFieldUpdateOperationsInput | string
-    to?: StringFieldUpdateOperationsInput | string
-    current?: StringFieldUpdateOperationsInput | string
+    fromMime?: StringFieldUpdateOperationsInput | string
+    toMime?: StringFieldUpdateOperationsInput | string
+    currentMime?: StringFieldUpdateOperationsInput | string
     status?: EnumConversion_StatusFieldUpdateOperationsInput | $Enums.Conversion_Status
     error?: NullableStringFieldUpdateOperationsInput | string | null
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -5468,9 +5468,9 @@ export namespace Prisma {
     id?: SortOrder
     createdAt?: SortOrder
     fileLocation?: SortOrder
-    from?: SortOrder
-    to?: SortOrder
-    current?: SortOrder
+    fromMime?: SortOrder
+    toMime?: SortOrder
+    currentMime?: SortOrder
     status?: SortOrder
     error?: SortOrder
     updatedAt?: SortOrder
@@ -5482,9 +5482,9 @@ export namespace Prisma {
     id?: SortOrder
     createdAt?: SortOrder
     fileLocation?: SortOrder
-    from?: SortOrder
-    to?: SortOrder
-    current?: SortOrder
+    fromMime?: SortOrder
+    toMime?: SortOrder
+    currentMime?: SortOrder
     status?: SortOrder
     error?: SortOrder
     updatedAt?: SortOrder
@@ -5496,9 +5496,9 @@ export namespace Prisma {
     id?: SortOrder
     createdAt?: SortOrder
     fileLocation?: SortOrder
-    from?: SortOrder
-    to?: SortOrder
-    current?: SortOrder
+    fromMime?: SortOrder
+    toMime?: SortOrder
+    currentMime?: SortOrder
     status?: SortOrder
     error?: SortOrder
     updatedAt?: SortOrder
@@ -5914,9 +5914,9 @@ export namespace Prisma {
     id?: string
     createdAt?: Date | string
     fileLocation: string
-    from: string
-    to: string
-    current: string
+    fromMime: string
+    toMime: string
+    currentMime: string
     status: $Enums.Conversion_Status
     error?: string | null
     updatedAt?: Date | string
@@ -5927,9 +5927,9 @@ export namespace Prisma {
     id?: string
     createdAt?: Date | string
     fileLocation: string
-    from: string
-    to: string
-    current: string
+    fromMime: string
+    toMime: string
+    currentMime: string
     status: $Enums.Conversion_Status
     error?: string | null
     updatedAt?: Date | string
@@ -5998,9 +5998,9 @@ export namespace Prisma {
     id?: StringFilter<"Conversion"> | string
     createdAt?: DateTimeFilter<"Conversion"> | Date | string
     fileLocation?: StringFilter<"Conversion"> | string
-    from?: StringFilter<"Conversion"> | string
-    to?: StringFilter<"Conversion"> | string
-    current?: StringFilter<"Conversion"> | string
+    fromMime?: StringFilter<"Conversion"> | string
+    toMime?: StringFilter<"Conversion"> | string
+    currentMime?: StringFilter<"Conversion"> | string
     status?: EnumConversion_StatusFilter<"Conversion"> | $Enums.Conversion_Status
     error?: StringNullableFilter<"Conversion"> | string | null
     updatedAt?: DateTimeFilter<"Conversion"> | Date | string
@@ -6041,9 +6041,9 @@ export namespace Prisma {
     id?: string
     createdAt?: Date | string
     fileLocation: string
-    from: string
-    to: string
-    current: string
+    fromMime: string
+    toMime: string
+    currentMime: string
     status: $Enums.Conversion_Status
     error?: string | null
     updatedAt?: Date | string
@@ -6054,9 +6054,9 @@ export namespace Prisma {
     id?: string
     createdAt?: Date | string
     fileLocation: string
-    from: string
-    to: string
-    current: string
+    fromMime: string
+    toMime: string
+    currentMime: string
     status: $Enums.Conversion_Status
     error?: string | null
     updatedAt?: Date | string
@@ -6257,9 +6257,9 @@ export namespace Prisma {
     id?: string
     createdAt?: Date | string
     fileLocation: string
-    from: string
-    to: string
-    current: string
+    fromMime: string
+    toMime: string
+    currentMime: string
     status: $Enums.Conversion_Status
     error?: string | null
     updatedAt?: Date | string
@@ -6299,9 +6299,9 @@ export namespace Prisma {
     id?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     fileLocation?: StringFieldUpdateOperationsInput | string
-    from?: StringFieldUpdateOperationsInput | string
-    to?: StringFieldUpdateOperationsInput | string
-    current?: StringFieldUpdateOperationsInput | string
+    fromMime?: StringFieldUpdateOperationsInput | string
+    toMime?: StringFieldUpdateOperationsInput | string
+    currentMime?: StringFieldUpdateOperationsInput | string
     status?: EnumConversion_StatusFieldUpdateOperationsInput | $Enums.Conversion_Status
     error?: NullableStringFieldUpdateOperationsInput | string | null
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -6312,9 +6312,9 @@ export namespace Prisma {
     id?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     fileLocation?: StringFieldUpdateOperationsInput | string
-    from?: StringFieldUpdateOperationsInput | string
-    to?: StringFieldUpdateOperationsInput | string
-    current?: StringFieldUpdateOperationsInput | string
+    fromMime?: StringFieldUpdateOperationsInput | string
+    toMime?: StringFieldUpdateOperationsInput | string
+    currentMime?: StringFieldUpdateOperationsInput | string
     status?: EnumConversion_StatusFieldUpdateOperationsInput | $Enums.Conversion_Status
     error?: NullableStringFieldUpdateOperationsInput | string | null
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -6325,9 +6325,9 @@ export namespace Prisma {
     id?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     fileLocation?: StringFieldUpdateOperationsInput | string
-    from?: StringFieldUpdateOperationsInput | string
-    to?: StringFieldUpdateOperationsInput | string
-    current?: StringFieldUpdateOperationsInput | string
+    fromMime?: StringFieldUpdateOperationsInput | string
+    toMime?: StringFieldUpdateOperationsInput | string
+    currentMime?: StringFieldUpdateOperationsInput | string
     status?: EnumConversion_StatusFieldUpdateOperationsInput | $Enums.Conversion_Status
     error?: NullableStringFieldUpdateOperationsInput | string | null
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -6338,9 +6338,9 @@ export namespace Prisma {
     id?: string
     createdAt?: Date | string
     fileLocation: string
-    from: string
-    to: string
-    current: string
+    fromMime: string
+    toMime: string
+    currentMime: string
     status: $Enums.Conversion_Status
     error?: string | null
     updatedAt?: Date | string
@@ -6351,9 +6351,9 @@ export namespace Prisma {
     id?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     fileLocation?: StringFieldUpdateOperationsInput | string
-    from?: StringFieldUpdateOperationsInput | string
-    to?: StringFieldUpdateOperationsInput | string
-    current?: StringFieldUpdateOperationsInput | string
+    fromMime?: StringFieldUpdateOperationsInput | string
+    toMime?: StringFieldUpdateOperationsInput | string
+    currentMime?: StringFieldUpdateOperationsInput | string
     status?: EnumConversion_StatusFieldUpdateOperationsInput | $Enums.Conversion_Status
     error?: NullableStringFieldUpdateOperationsInput | string | null
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -6364,9 +6364,9 @@ export namespace Prisma {
     id?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     fileLocation?: StringFieldUpdateOperationsInput | string
-    from?: StringFieldUpdateOperationsInput | string
-    to?: StringFieldUpdateOperationsInput | string
-    current?: StringFieldUpdateOperationsInput | string
+    fromMime?: StringFieldUpdateOperationsInput | string
+    toMime?: StringFieldUpdateOperationsInput | string
+    currentMime?: StringFieldUpdateOperationsInput | string
     status?: EnumConversion_StatusFieldUpdateOperationsInput | $Enums.Conversion_Status
     error?: NullableStringFieldUpdateOperationsInput | string | null
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -6377,9 +6377,9 @@ export namespace Prisma {
     id?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     fileLocation?: StringFieldUpdateOperationsInput | string
-    from?: StringFieldUpdateOperationsInput | string
-    to?: StringFieldUpdateOperationsInput | string
-    current?: StringFieldUpdateOperationsInput | string
+    fromMime?: StringFieldUpdateOperationsInput | string
+    toMime?: StringFieldUpdateOperationsInput | string
+    currentMime?: StringFieldUpdateOperationsInput | string
     status?: EnumConversion_StatusFieldUpdateOperationsInput | $Enums.Conversion_Status
     error?: NullableStringFieldUpdateOperationsInput | string | null
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string

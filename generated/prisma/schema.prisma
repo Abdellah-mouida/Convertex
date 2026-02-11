@@ -55,9 +55,9 @@ model Conversion {
   id           String            @id @default(dbgenerated("concat('cnv_', replace(cast(gen_random_uuid() as text), '-', ''))")) @db.Text
   createdAt    DateTime          @default(now())
   fileLocation String
-  from         String
-  to           String
-  current      String
+  fromMime     String
+  toMime       String
+  currentMime  String
   status       Conversion_Status
   error        String?
   updatedAt    DateTime          @updatedAt
