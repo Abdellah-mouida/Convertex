@@ -21,7 +21,7 @@ const convert = async (c: Conversion) => {
   const converted = await PNG_TO_JPEG(buffer);
   console.log("==> File was converted to " + c.toMime);
   console.log("Uplaoding the file back to Supabase...");
-  const key = `${randomUUID()}_${randomUUID()}`.replace("\-\g", "");
+  const key = `${randomUUID().replaceAll("-", "")}`;
   const fileLocation = `uploads/${key}`;
   const { data: uploadData, error: uploadError } = await supabase.storage
     .from(bucket)

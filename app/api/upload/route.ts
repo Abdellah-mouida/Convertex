@@ -26,7 +26,7 @@ export const POST = async (request: NextRequest) => {
   }
 
   // upload the file to S3
-  const key = `${uuid()}_${uuid()}`.replace("\-\g", "");
+  const key = `${uuid().replaceAll("-", "")}`;
   const fileLocation = `uploads/${key}`;
   const bucket = process.env.SUPABASE_BUCKET as string;
 

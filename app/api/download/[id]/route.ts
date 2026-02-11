@@ -2,7 +2,7 @@ import prisma from "@/lib/prisma";
 import { NextRequest, NextResponse } from "next/server";
 import { supabase } from "@/lib/supabase";
 import { Conversion_Status } from "@/generated/prisma";
-import { contentType } from "mime-types";
+import { contentType, extension } from "mime-types";
 export async function GET(
   req: NextRequest,
   { params }: { params: Promise<{ id: string }> },
@@ -40,7 +40,7 @@ export async function GET(
     if (error || !data) {
       return new NextResponse("File not found", { status: 404 });
     }
-    const filename = `${conversion.id.slice(4, 16)}.${contentType(conversion.toMime)}`;
+    const filename = `${conversion.id.slice(4, 16)}.${extension(conversion.toMime)}`;
 
     return new NextResponse(data.stream(), {
       headers: {
