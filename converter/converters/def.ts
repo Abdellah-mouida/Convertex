@@ -3,3 +3,12 @@ export interface Converter {
   from: string;
   to: string;
 }
+export type Edge = {
+  converter: Converter;
+  from: Node;
+  to: Node;
+};
+export type Node = {
+  type: string;
+  edges: Edge[];
+};

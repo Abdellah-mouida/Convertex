@@ -2,8 +2,9 @@ import "dotenv/config";
 import { Conversion, Conversion_Status } from "@/generated/prisma";
 import prisma from "@/lib/prisma";
 import { supabase } from "@/lib/supabase";
-import { PNG_TO_JPEG } from "./converters/images";
+// import { PNG_TO_JPEG } from "./converters/images";
 import { randomUUID } from "crypto";
+import { findConverter } from "./converters/graph";
 
 const convert = async (c: Conversion) => {
   const bucket = process.env.SUPABASE_BUCKET as string;
@@ -18,7 +19,50 @@ const convert = async (c: Conversion) => {
   console.log("==> File Received");
   console.log("Converting the File to " + c.toMime + " Format ...");
   const buffer = Buffer.from(await data.arrayBuffer());
-  const converted = await PNG_TO_JPEG(buffer);
+  const converters = findConverter(c.fromMime, c.toMime);
+  console.log(converters);
+  if (!converters) {
+    console.error("No Converter Found for " + c.fromMime + " to " + c.toMime);
+    await prisma.conversion.update({
+      where: { id: c.id },
+      data: {
+        status: Conversion_Status.FAILED,
+      },
+    });
+    return;
+  }
+
+  // let converted = null;
+  // for (const edge of converters) {
+  const converter = findConverter(c.fromMime, c.toMime);
+  if (!converter) {
+    console.log("No Converter Found for " + c.fromMime + " to " + c.toMime);
+    await prisma.conversion.update({
+      where: { id: c.id },
+      data: {
+        status: Conversion_Status.FAILED,
+      },
+    });
+    return;
+  }
+  console.log(
+    "Converter Found : Conerting From " +
+      converter.from +
+      " --> " +
+      converter.to,
+  );
+  const converted = await converter(buffer);
+  if (!converted) {
+    console.error("Conversion Failed for " + c.fromMime + " to " + c.toMime);
+    await prisma.conversion.update({
+      where: { id: c.id },
+      data: {
+        status: Conversion_Status.FAILED,
+      },
+    });
+    return;
+  }
+
   console.log("==> File was converted to " + c.toMime);
   console.log("Uplaoding the file back to Supabase...");
   const key = `${randomUUID().replaceAll("-", "")}`;
